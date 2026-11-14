@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OscuridadALaLuzRouteImport } from './routes/oscuridad-a-la-luz'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OscuridadALaLuzRoute = OscuridadALaLuzRouteImport.update({
+  id: '/oscuridad-a-la-luz',
+  path: '/oscuridad-a-la-luz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/oscuridad-a-la-luz'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/oscuridad-a-la-luz'
+  id: '__root__' | '/' | '/oscuridad-a-la-luz'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  OscuridadALaLuzRoute: typeof OscuridadALaLuzRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oscuridad-a-la-luz': {
+      id: '/oscuridad-a-la-luz'
+      path: '/oscuridad-a-la-luz'
+      fullPath: '/oscuridad-a-la-luz'
+      preLoaderRoute: typeof OscuridadALaLuzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  OscuridadALaLuzRoute: OscuridadALaLuzRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
