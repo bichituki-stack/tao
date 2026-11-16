@@ -178,3 +178,17 @@
 @utility animate-spark { animation: spark 1.4s ease-out both; }
 @utility animate-breathe { animation: breathe 4s ease-in-out infinite; }
 @utility animate-slowzoom { animation: slowzoom 14s ease-out both; }
+
+@media (pointer: fine) and (min-width: 768px) {
+  .dark-zone { cursor: none; }
+  .dark-zone a, .dark-zone button { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

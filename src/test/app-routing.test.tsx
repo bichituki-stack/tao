@@ -3,6 +3,7 @@ import { createRouter, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 
 import { routeTree } from "@/routeTree.gen";
+import { navigation, type SitePath } from "@/data/site";
 
 // Match routes without running loaders or rendering: loaders may need a server or
 // network the test run lacks, and jsdom never loads the stylesheets React waits on.
@@ -13,5 +14,19 @@ describe("App routing", () => {
     const matches = router.matchRoutes("/");
 
     expect(matches.at(-1)?.routeId).not.toBe(rootRouteId);
+  });
+
+  it("matches a real page for every navigation destination", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    const destinations = new Set<SitePath>(["/agenda"]);
+    for (const group of navigation) {
+      if (group.to) destinations.add(group.to);
+      for (const item of group.items ?? []) destinations.add(item.to);
+    }
+
+    for (const path of destinations) {
+      const matches = router.matchRoutes(path);
+      expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
+    }
   });
 });

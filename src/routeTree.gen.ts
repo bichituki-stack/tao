@@ -10,11 +10,78 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AbundanciaRecuerdaTusSuenosRouteImport } from './routes/abundancia-recuerda-tus-suenos'
+import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as DesafiosGratuitosRouteImport } from './routes/desafios-gratuitos'
+import { Route as DiplomadoSexualidadSagradaRouteImport } from './routes/diplomado-sexualidad-sagrada'
+import { Route as DiplomadoTrascendenciaRouteImport } from './routes/diplomado-trascendencia'
+import { Route as DocumentalRouteImport } from './routes/documental'
+import { Route as EnfoqueRouteImport } from './routes/enfoque'
+import { Route as EventosRouteImport } from './routes/eventos'
+import { Route as FormacionYLinajeRouteImport } from './routes/formacion-y-linaje'
+import { Route as GozoDelCorazonRouteImport } from './routes/gozo-del-corazon'
 import { Route as OscuridadALaLuzRouteImport } from './routes/oscuridad-a-la-luz'
+import { Route as PodcastRouteImport } from './routes/podcast'
+import { Route as PrevencionViolenciaParejaRouteImport } from './routes/prevencion-violencia-pareja'
+import { Route as RetiroParaRenacerRouteImport } from './routes/retiro-para-renacer'
+import { Route as RetiroSexualidadSagradaRouteImport } from './routes/retiro-sexualidad-sagrada'
+import { Route as SeparacionesAmorosasRouteImport } from './routes/separaciones-amorosas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AbundanciaRecuerdaTusSuenosRoute =
+  AbundanciaRecuerdaTusSuenosRouteImport.update({
+    id: '/abundancia-recuerda-tus-suenos',
+    path: '/abundancia-recuerda-tus-suenos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesafiosGratuitosRoute = DesafiosGratuitosRouteImport.update({
+  id: '/desafios-gratuitos',
+  path: '/desafios-gratuitos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiplomadoSexualidadSagradaRoute =
+  DiplomadoSexualidadSagradaRouteImport.update({
+    id: '/diplomado-sexualidad-sagrada',
+    path: '/diplomado-sexualidad-sagrada',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DiplomadoTrascendenciaRoute = DiplomadoTrascendenciaRouteImport.update({
+  id: '/diplomado-trascendencia',
+  path: '/diplomado-trascendencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocumentalRoute = DocumentalRouteImport.update({
+  id: '/documental',
+  path: '/documental',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnfoqueRoute = EnfoqueRouteImport.update({
+  id: '/enfoque',
+  path: '/enfoque',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventosRoute = EventosRouteImport.update({
+  id: '/eventos',
+  path: '/eventos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormacionYLinajeRoute = FormacionYLinajeRouteImport.update({
+  id: '/formacion-y-linaje',
+  path: '/formacion-y-linaje',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GozoDelCorazonRoute = GozoDelCorazonRouteImport.update({
+  id: '/gozo-del-corazon',
+  path: '/gozo-del-corazon',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OscuridadALaLuzRoute = OscuridadALaLuzRouteImport.update({
@@ -22,31 +89,169 @@ const OscuridadALaLuzRoute = OscuridadALaLuzRouteImport.update({
   path: '/oscuridad-a-la-luz',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PodcastRoute = PodcastRouteImport.update({
+  id: '/podcast',
+  path: '/podcast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrevencionViolenciaParejaRoute =
+  PrevencionViolenciaParejaRouteImport.update({
+    id: '/prevencion-violencia-pareja',
+    path: '/prevencion-violencia-pareja',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const RetiroParaRenacerRoute = RetiroParaRenacerRouteImport.update({
+  id: '/retiro-para-renacer',
+  path: '/retiro-para-renacer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RetiroSexualidadSagradaRoute = RetiroSexualidadSagradaRouteImport.update({
+  id: '/retiro-sexualidad-sagrada',
+  path: '/retiro-sexualidad-sagrada',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeparacionesAmorosasRoute = SeparacionesAmorosasRouteImport.update({
+  id: '/separaciones-amorosas',
+  path: '/separaciones-amorosas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/abundancia-recuerda-tus-suenos': typeof AbundanciaRecuerdaTusSuenosRoute
+  '/agenda': typeof AgendaRoute
+  '/desafios-gratuitos': typeof DesafiosGratuitosRoute
+  '/diplomado-sexualidad-sagrada': typeof DiplomadoSexualidadSagradaRoute
+  '/diplomado-trascendencia': typeof DiplomadoTrascendenciaRoute
+  '/documental': typeof DocumentalRoute
+  '/enfoque': typeof EnfoqueRoute
+  '/eventos': typeof EventosRoute
+  '/formacion-y-linaje': typeof FormacionYLinajeRoute
+  '/gozo-del-corazon': typeof GozoDelCorazonRoute
   '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
+  '/podcast': typeof PodcastRoute
+  '/prevencion-violencia-pareja': typeof PrevencionViolenciaParejaRoute
+  '/retiro-para-renacer': typeof RetiroParaRenacerRoute
+  '/retiro-sexualidad-sagrada': typeof RetiroSexualidadSagradaRoute
+  '/separaciones-amorosas': typeof SeparacionesAmorosasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/abundancia-recuerda-tus-suenos': typeof AbundanciaRecuerdaTusSuenosRoute
+  '/agenda': typeof AgendaRoute
+  '/desafios-gratuitos': typeof DesafiosGratuitosRoute
+  '/diplomado-sexualidad-sagrada': typeof DiplomadoSexualidadSagradaRoute
+  '/diplomado-trascendencia': typeof DiplomadoTrascendenciaRoute
+  '/documental': typeof DocumentalRoute
+  '/enfoque': typeof EnfoqueRoute
+  '/eventos': typeof EventosRoute
+  '/formacion-y-linaje': typeof FormacionYLinajeRoute
+  '/gozo-del-corazon': typeof GozoDelCorazonRoute
   '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
+  '/podcast': typeof PodcastRoute
+  '/prevencion-violencia-pareja': typeof PrevencionViolenciaParejaRoute
+  '/retiro-para-renacer': typeof RetiroParaRenacerRoute
+  '/retiro-sexualidad-sagrada': typeof RetiroSexualidadSagradaRoute
+  '/separaciones-amorosas': typeof SeparacionesAmorosasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/abundancia-recuerda-tus-suenos': typeof AbundanciaRecuerdaTusSuenosRoute
+  '/agenda': typeof AgendaRoute
+  '/desafios-gratuitos': typeof DesafiosGratuitosRoute
+  '/diplomado-sexualidad-sagrada': typeof DiplomadoSexualidadSagradaRoute
+  '/diplomado-trascendencia': typeof DiplomadoTrascendenciaRoute
+  '/documental': typeof DocumentalRoute
+  '/enfoque': typeof EnfoqueRoute
+  '/eventos': typeof EventosRoute
+  '/formacion-y-linaje': typeof FormacionYLinajeRoute
+  '/gozo-del-corazon': typeof GozoDelCorazonRoute
   '/oscuridad-a-la-luz': typeof OscuridadALaLuzRoute
+  '/podcast': typeof PodcastRoute
+  '/prevencion-violencia-pareja': typeof PrevencionViolenciaParejaRoute
+  '/retiro-para-renacer': typeof RetiroParaRenacerRoute
+  '/retiro-sexualidad-sagrada': typeof RetiroSexualidadSagradaRoute
+  '/separaciones-amorosas': typeof SeparacionesAmorosasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/oscuridad-a-la-luz'
+  fullPaths:
+    | '/'
+    | '/abundancia-recuerda-tus-suenos'
+    | '/agenda'
+    | '/desafios-gratuitos'
+    | '/diplomado-sexualidad-sagrada'
+    | '/diplomado-trascendencia'
+    | '/documental'
+    | '/enfoque'
+    | '/eventos'
+    | '/formacion-y-linaje'
+    | '/gozo-del-corazon'
+    | '/oscuridad-a-la-luz'
+    | '/podcast'
+    | '/prevencion-violencia-pareja'
+    | '/retiro-para-renacer'
+    | '/retiro-sexualidad-sagrada'
+    | '/separaciones-amorosas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/oscuridad-a-la-luz'
-  id: '__root__' | '/' | '/oscuridad-a-la-luz'
+  to:
+    | '/'
+    | '/abundancia-recuerda-tus-suenos'
+    | '/agenda'
+    | '/desafios-gratuitos'
+    | '/diplomado-sexualidad-sagrada'
+    | '/diplomado-trascendencia'
+    | '/documental'
+    | '/enfoque'
+    | '/eventos'
+    | '/formacion-y-linaje'
+    | '/gozo-del-corazon'
+    | '/oscuridad-a-la-luz'
+    | '/podcast'
+    | '/prevencion-violencia-pareja'
+    | '/retiro-para-renacer'
+    | '/retiro-sexualidad-sagrada'
+    | '/separaciones-amorosas'
+  id:
+    | '__root__'
+    | '/'
+    | '/abundancia-recuerda-tus-suenos'
+    | '/agenda'
+    | '/desafios-gratuitos'
+    | '/diplomado-sexualidad-sagrada'
+    | '/diplomado-trascendencia'
+    | '/documental'
+    | '/enfoque'
+    | '/eventos'
+    | '/formacion-y-linaje'
+    | '/gozo-del-corazon'
+    | '/oscuridad-a-la-luz'
+    | '/podcast'
+    | '/prevencion-violencia-pareja'
+    | '/retiro-para-renacer'
+    | '/retiro-sexualidad-sagrada'
+    | '/separaciones-amorosas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AbundanciaRecuerdaTusSuenosRoute: typeof AbundanciaRecuerdaTusSuenosRoute
+  AgendaRoute: typeof AgendaRoute
+  DesafiosGratuitosRoute: typeof DesafiosGratuitosRoute
+  DiplomadoSexualidadSagradaRoute: typeof DiplomadoSexualidadSagradaRoute
+  DiplomadoTrascendenciaRoute: typeof DiplomadoTrascendenciaRoute
+  DocumentalRoute: typeof DocumentalRoute
+  EnfoqueRoute: typeof EnfoqueRoute
+  EventosRoute: typeof EventosRoute
+  FormacionYLinajeRoute: typeof FormacionYLinajeRoute
+  GozoDelCorazonRoute: typeof GozoDelCorazonRoute
   OscuridadALaLuzRoute: typeof OscuridadALaLuzRoute
+  PodcastRoute: typeof PodcastRoute
+  PrevencionViolenciaParejaRoute: typeof PrevencionViolenciaParejaRoute
+  RetiroParaRenacerRoute: typeof RetiroParaRenacerRoute
+  RetiroSexualidadSagradaRoute: typeof RetiroSexualidadSagradaRoute
+  SeparacionesAmorosasRoute: typeof SeparacionesAmorosasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -58,6 +263,76 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/abundancia-recuerda-tus-suenos': {
+      id: '/abundancia-recuerda-tus-suenos'
+      path: '/abundancia-recuerda-tus-suenos'
+      fullPath: '/abundancia-recuerda-tus-suenos'
+      preLoaderRoute: typeof AbundanciaRecuerdaTusSuenosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agenda': {
+      id: '/agenda'
+      path: '/agenda'
+      fullPath: '/agenda'
+      preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desafios-gratuitos': {
+      id: '/desafios-gratuitos'
+      path: '/desafios-gratuitos'
+      fullPath: '/desafios-gratuitos'
+      preLoaderRoute: typeof DesafiosGratuitosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diplomado-sexualidad-sagrada': {
+      id: '/diplomado-sexualidad-sagrada'
+      path: '/diplomado-sexualidad-sagrada'
+      fullPath: '/diplomado-sexualidad-sagrada'
+      preLoaderRoute: typeof DiplomadoSexualidadSagradaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diplomado-trascendencia': {
+      id: '/diplomado-trascendencia'
+      path: '/diplomado-trascendencia'
+      fullPath: '/diplomado-trascendencia'
+      preLoaderRoute: typeof DiplomadoTrascendenciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/documental': {
+      id: '/documental'
+      path: '/documental'
+      fullPath: '/documental'
+      preLoaderRoute: typeof DocumentalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enfoque': {
+      id: '/enfoque'
+      path: '/enfoque'
+      fullPath: '/enfoque'
+      preLoaderRoute: typeof EnfoqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eventos': {
+      id: '/eventos'
+      path: '/eventos'
+      fullPath: '/eventos'
+      preLoaderRoute: typeof EventosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formacion-y-linaje': {
+      id: '/formacion-y-linaje'
+      path: '/formacion-y-linaje'
+      fullPath: '/formacion-y-linaje'
+      preLoaderRoute: typeof FormacionYLinajeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gozo-del-corazon': {
+      id: '/gozo-del-corazon'
+      path: '/gozo-del-corazon'
+      fullPath: '/gozo-del-corazon'
+      preLoaderRoute: typeof GozoDelCorazonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/oscuridad-a-la-luz': {
       id: '/oscuridad-a-la-luz'
       path: '/oscuridad-a-la-luz'
@@ -65,12 +340,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OscuridadALaLuzRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/podcast': {
+      id: '/podcast'
+      path: '/podcast'
+      fullPath: '/podcast'
+      preLoaderRoute: typeof PodcastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prevencion-violencia-pareja': {
+      id: '/prevencion-violencia-pareja'
+      path: '/prevencion-violencia-pareja'
+      fullPath: '/prevencion-violencia-pareja'
+      preLoaderRoute: typeof PrevencionViolenciaParejaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retiro-para-renacer': {
+      id: '/retiro-para-renacer'
+      path: '/retiro-para-renacer'
+      fullPath: '/retiro-para-renacer'
+      preLoaderRoute: typeof RetiroParaRenacerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retiro-sexualidad-sagrada': {
+      id: '/retiro-sexualidad-sagrada'
+      path: '/retiro-sexualidad-sagrada'
+      fullPath: '/retiro-sexualidad-sagrada'
+      preLoaderRoute: typeof RetiroSexualidadSagradaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/separaciones-amorosas': {
+      id: '/separaciones-amorosas'
+      path: '/separaciones-amorosas'
+      fullPath: '/separaciones-amorosas'
+      preLoaderRoute: typeof SeparacionesAmorosasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AbundanciaRecuerdaTusSuenosRoute: AbundanciaRecuerdaTusSuenosRoute,
+  AgendaRoute: AgendaRoute,
+  DesafiosGratuitosRoute: DesafiosGratuitosRoute,
+  DiplomadoSexualidadSagradaRoute: DiplomadoSexualidadSagradaRoute,
+  DiplomadoTrascendenciaRoute: DiplomadoTrascendenciaRoute,
+  DocumentalRoute: DocumentalRoute,
+  EnfoqueRoute: EnfoqueRoute,
+  EventosRoute: EventosRoute,
+  FormacionYLinajeRoute: FormacionYLinajeRoute,
+  GozoDelCorazonRoute: GozoDelCorazonRoute,
   OscuridadALaLuzRoute: OscuridadALaLuzRoute,
+  PodcastRoute: PodcastRoute,
+  PrevencionViolenciaParejaRoute: PrevencionViolenciaParejaRoute,
+  RetiroParaRenacerRoute: RetiroParaRenacerRoute,
+  RetiroSexualidadSagradaRoute: RetiroSexualidadSagradaRoute,
+  SeparacionesAmorosasRoute: SeparacionesAmorosasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
