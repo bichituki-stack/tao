@@ -67,7 +67,7 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
         <Link to="/" onClick={() => setOpen(false)} className="shrink-0 font-display text-2xl tracking-wide" aria-label="Tao Axuni, inicio">
           Tao <span className="italic text-gold">Axuni</span>
         </Link>
-        <nav className="hidden min-w-0 items-center justify-center gap-4 lg:flex xl:gap-6" aria-label="Navegación principal">
+        <nav className="hidden min-w-0 items-center justify-center gap-4 xl:flex 2xl:gap-6" aria-label="Navegación principal">
           {navigation.map((group) => (
             <div key={group.label} className="group relative shrink-0">
               {group.to ? (
@@ -89,15 +89,15 @@ export function Header({ tone = "light" }: { tone?: "light" | "dark" }) {
             </div>
           ))}
         </nav>
-        <Link to="/agenda" className="hidden shrink-0 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-3 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-ink shadow-glow transition hover:scale-[1.03] lg:inline-block xl:px-5 xl:text-xs xl:tracking-[0.2em]">
+        <Link to="/agenda" className="hidden shrink-0 whitespace-nowrap rounded-full bg-gold-gradient px-4 py-3 text-[0.65rem] font-medium uppercase tracking-[0.16em] text-ink shadow-glow transition hover:scale-[1.03] xl:inline-block 2xl:px-5 2xl:text-xs 2xl:tracking-[0.2em]">
           Agenda una llamada
         </Link>
-        <button className="shrink-0 lg:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open}>
+        <button className="shrink-0 xl:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open}>
           {open ? <X /> : <Menu />}
         </button>
       </div>
       {open && (
-        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-border bg-cream px-6 py-5 text-ink lg:hidden">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-border bg-cream px-6 py-5 text-ink xl:hidden">
           {navigation.map((group) => (
             <div key={group.label} className="border-b border-border py-3">
               {group.to ? (

@@ -28,6 +28,7 @@ const stages = [
 ];
 
 function Darkness() {
+  const darkZone = useRef<HTMLDivElement>(null);
   const glow = useRef<HTMLDivElement>(null);
   const dot = useRef<HTMLDivElement>(null);
 
@@ -36,16 +37,26 @@ function Darkness() {
       if (glow.current) glow.current.style.transform = `translate(${event.clientX - 250}px, ${event.clientY - 250}px)`;
       if (dot.current) dot.current.style.transform = `translate(${event.clientX - 3}px, ${event.clientY - 3}px)`;
     };
+    const setCursorVisibility = (visible: boolean) => {
+      if (glow.current) glow.current.style.opacity = visible ? "1" : "0";
+      if (dot.current) dot.current.style.opacity = visible ? "1" : "0";
+    };
+    const observer = new IntersectionObserver(([entry]) => setCursorVisibility(Boolean(entry?.isIntersecting)), { threshold: 0 });
+    if (darkZone.current) observer.observe(darkZone.current);
+    setCursorVisibility(true);
     window.addEventListener("mousemove", move, { passive: true });
-    return () => window.removeEventListener("mousemove", move);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("mousemove", move);
+    };
   }, []);
 
   return (
     <div className="bg-night text-pearl">
       <Header tone="dark" />
-      <div className="dark-zone">
-        <div ref={glow} className="pointer-events-none fixed left-0 top-0 z-40 hidden h-[500px] w-[500px] rounded-full mix-blend-screen md:block" style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold-soft) 22%, transparent) 0%, transparent 65%)" }} />
-        <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-1.5 w-1.5 rounded-full bg-gold shadow-glow md:block" />
+      <div ref={darkZone} className="dark-zone">
+        <div ref={glow} className="pointer-events-none fixed left-0 top-0 z-40 hidden h-[500px] w-[500px] rounded-full opacity-0 mix-blend-screen transition-opacity duration-500 md:block" style={{ background: "radial-gradient(circle, color-mix(in oklab, var(--gold-soft) 22%, transparent) 0%, transparent 65%)" }} />
+        <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-1.5 w-1.5 rounded-full bg-gold opacity-0 shadow-glow transition-opacity duration-500 md:block" />
 
         <section className="flex min-h-screen flex-col items-center justify-center px-6 pt-20 text-center">
           <p className="eyebrow animate-rise text-gold">Retiro Taoísta</p>

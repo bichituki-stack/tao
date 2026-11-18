@@ -8,7 +8,11 @@ import { Footer } from "@/components/site/Footer";
 import { Reveal } from "@/components/site/Reveal";
 import type { PageContent } from "@/data/site";
 
-const images = { cave, dawn, portrait };
+const images = {
+  cave: { src: cave, width: 1920, height: 1088 },
+  dawn: { src: dawn, width: 1920, height: 1088 },
+  portrait: { src: portrait, width: 896, height: 1152 },
+};
 
 export function ContentPage({ content }: { content: PageContent }) {
   const image = content.image ? images[content.image] : null;
@@ -21,7 +25,7 @@ export function ContentPage({ content }: { content: PageContent }) {
         <section className="relative flex min-h-[82vh] items-end overflow-hidden bg-night pb-20 pt-40 text-pearl md:pb-28">
           {image ? (
             <>
-              <img src={image} alt={content.imageAlt ?? ""} width={1920} height={1088} className={`absolute inset-0 h-full w-full object-cover opacity-50 ${content.image === "portrait" ? "object-[center_30%]" : ""}`} />
+              <img src={image.src} alt={content.imageAlt ?? ""} width={image.width} height={image.height} className={`absolute inset-0 h-full w-full object-cover opacity-50 ${content.image === "portrait" ? "object-[center_30%]" : ""}`} />
               <div className="absolute inset-0 bg-gradient-to-r from-night via-night/75 to-night/25" />
               <div className="absolute inset-0 bg-gradient-to-t from-night via-transparent to-night/40" />
             </>
