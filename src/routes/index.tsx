@@ -48,10 +48,10 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/10 to-ink/70" />
         <div className="relative mx-auto w-full max-w-7xl px-6 pb-24 pt-40 text-cream">
           <p className="eyebrow animate-rise text-gold-soft">Taoísmo · Alquimia interna · Sexualidad sagrada</p>
-          <h1 className="animate-rise mt-6 max-w-6xl text-5xl leading-[1.02] md:text-7xl lg:text-8xl" style={{ animationDelay: ".2s" }}>
-            Recuerda el <em className="text-gold-gradient">Gozo Absoluto.</em>
+          <h1 className="animate-rise mt-6 max-w-6xl text-4xl leading-[1.04] sm:text-5xl md:text-7xl lg:text-8xl" style={{ animationDelay: ".2s" }}>
+            Recuerda el <em className="block text-gold-gradient drop-shadow-[0_1px_12px_var(--night)] sm:inline sm:drop-shadow-none">Gozo Absoluto.</em>
             <br />Despierta tu energía vital.
-            <br /><span className="text-4xl md:text-6xl lg:text-7xl">Transforma tu vida profundamente.</span>
+            <br /><span className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl">Transforma tu vida profundamente.</span>
           </h1>
           <p className="animate-rise mt-8 max-w-2xl text-lg leading-relaxed text-cream/85" style={{ animationDelay: ".45s" }}>
             Experiencias y enseñanzas de Trascendencia Espiritual, Sexualidad Sagrada y Relaciones Conscientes para quienes desean vivir con mayor dicha y plenitud expresando su pleno potencial.
